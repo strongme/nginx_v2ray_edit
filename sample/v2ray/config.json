@@ -1,0 +1,83 @@
+{
+  "log": {
+    "access": "/var/log/v2ray/access.log",
+    "error": "/var/log/v2ray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "port":38223,
+      "listen": "127.0.0.1",
+      "tag": "vmess-in",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id":"addff27a-5f84-47b0-a127-446a77c0b085",
+            "alterId":2
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path":"/696fa830/"
+        }
+      }
+    },
+    {
+      "port":38224,
+      "listen": "127.0.0.1",
+      "tag": "vmess-inn",
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id":"f7e19a57-160c-40c6-b57c-4210bda31aef",
+            "alterId":2
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path":"/aea2ln3m/"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": { },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": { },
+      "tag": "blocked"
+    }
+  ],
+  "dns": {
+    "servers": [
+      "https+local://1.1.1.1/dns-query",
+      "1.1.1.1",
+      "1.0.0.1",
+      "8.8.8.8",
+      "8.8.4.4",
+      "localhost"
+    ]
+  },
+  "routing": {
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "vmess-in"
+        ],
+        "outboundTag": "direct"
+      }
+    ]
+  }
+}

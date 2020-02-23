@@ -1,0 +1,36 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 20%;
+}
+
+#pane {
+  position: absolute;
+  top: 0;
+  right: 80%;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+}
+
+#restartnginx, #checksyntax, #reloadnginx, #saveconfig, #newconfig, #loadconfig, #tonginx, #tov2ray{
+  width: 97%;
+  margin: 5px;
+}
+
+.configItem {
+  cursor: pointer;
+}
+
+.deleteItem {
+  float: right;
+  cursor: pointer;
+}

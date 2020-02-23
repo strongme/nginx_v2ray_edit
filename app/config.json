@@ -1,0 +1,6 @@
+{
+    "address" : "0.0.0.0",
+    "port" : "7676",
+    "config_nginx_folder" : "/etc/nginx/conf/conf.d",
+    "config_v2ray_folder": "/etc/v2ray"
+}
